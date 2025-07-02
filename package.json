@@ -1,0 +1,83 @@
+{
+  "publisher": "simonhe",
+  "name": "show-pwd",
+  "displayName": "show-pwd",
+  "version": "0.0.1",
+  "packageManager": "pnpm@10.9.0",
+  "description": "show-pwd",
+  "author": "Simon He <https://github.com/Simon-He95>",
+  "license": "MIT",
+  "funding": "https://github.com/sponsors/Simon-He95",
+  "homepage": "https://github.com/Simon-He95/show-pwd#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Simon-He95/show-pwd"
+  },
+  "bugs": {
+    "url": "https://github.com/Simon-He95/show-pwd/issues"
+  },
+  "sponsor": {
+    "url": "https://github.com/Simon-He95/sponsor"
+  },
+  "keywords": [
+    "vscode",
+    "vscode-use",
+    "vscode-template"
+  ],
+  "categories": [
+    "Other"
+  ],
+  "main": "./dist/index.js",
+  "icon": "icon.png",
+  "engines": {
+    "vscode": "^1.75.1"
+  },
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "contributes": {
+    "commands": [
+      {
+        "command": "show-pwd.copyFilePath",
+        "title": "Copy File Path",
+        "icon": {
+          "light": "./assets/copy-path.svg",
+          "dark": "./assets/copy-path.svg"
+        }
+      }
+    ],
+    "menus": {
+      "editor/title": [
+        {
+          "command": "show-pwd.copyFilePath",
+          "when": "editorFocus",
+          "group": "navigation"
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "dev": "nr build",
+    "test": "vitest",
+    "build": "tsdown",
+    "pack": "vsce package --no-dependencies",
+    "lint": "eslint . --cache",
+    "lint:fix": "nr lint --fix",
+    "publish": "vsce publish --no-dependencies",
+    "typecheck": "tsc --noEmit",
+    "release": "nr build --minify && bumpp && nr publish"
+  },
+  "devDependencies": {
+    "@antfu/eslint-config": "^3.16.0",
+    "@types/node": "^18.19.86",
+    "@types/vscode": "1.75.1",
+    "@vscode-use/utils": "0.1.54",
+    "@vscode/vsce": "^3.3.2",
+    "bumpp": "^9.11.1",
+    "eslint": "^9.25.1",
+    "sharp": "^0.34.2",
+    "tsdown": "^0.9.5",
+    "typescript": "^5.8.3",
+    "vitest": "^3.1.2"
+  }
+}
