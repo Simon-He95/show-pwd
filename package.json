@@ -42,7 +42,7 @@
         "title": "Copy File Path",
         "icon": {
           "light": "./assets/copy-path.svg",
-          "dark": "./assets/copy-path.svg"
+          "dark": "./assets/copy-path-dark.svg"
         }
       }
     ],
@@ -50,7 +50,6 @@
       "editor/title": [
         {
           "command": "show-pwd.copyFilePath",
-          "when": "editorFocus",
           "group": "navigation"
         }
       ]
